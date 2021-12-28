@@ -1,16 +1,16 @@
 import numpy as np
 import math
 
-def conjGrad(x,b,tol=1.0e-9):
+def conjGrad(Ax, x,b,tol=1.0e-9):
     n = len(b)
-    r = b - Av(x)
+    r = b - Ax(x)
     s = r.copy()
     
     for i in range(n):
-        u = Av(s)
+        u = Ax(s)
         alpha = np.dot(s,r)/np.dot(s,u)
         x = x + alpha*s
-        r = b - Av(x)
+        r = b - Ax(x)
     
         if(math.sqrt(np.dot(r,r))) < tol:
             break
@@ -33,6 +33,6 @@ n = 20
 b = np.zeros(n)
 b[n-1] = 1.0
 x = np.zeros(n)
-x,numIter = conjGrad(x,b)
+x,numIter = conjGrad(Av,x,b)
 print(x)
 
