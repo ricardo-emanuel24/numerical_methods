@@ -1,16 +1,23 @@
 import numpy as np
-from conjGrad import conjGrad
+from numpy.core.arrayprint import FloatFormat
+import conjGrad
 
-def Av(v):
-    n = len(v)
+def Av(T):
+    n = len(T)
     Ax = np.zeros(n)
-    for i in range(n):
-        Ax[i] += (-4*v[i])
-        if i<6:
-            Ax[i] += v[i]
-        if i>2:
-            Ax[i] += v[i]
-        if i != 3 or
+    
+    Ax[:] += (4*T[:])
+    Ax[:6] -= T[3:]
+    Ax[3:] -= T[:6]
+    Ax[[0,1,3,4,6,7]] -= T[[1,2,4,5,7,8]]
+    Ax[[1,2,4,5,7,8]] -= T[[0,1,3,4,6,7]]
 
+    return Ax
 
-b=np.array([0,0,100,0,0,100,200,200,300])
+b=np.array([0,0,100,0,0,100,200,200,300]).astype(float)
+x = np.zeros(9)
+
+x,numIter = conjGrad.conj_Grad(Av,x,b)
+
+print(x[:3], '\n', x[3:6], '\n', x[6:9])
+print(numIter)

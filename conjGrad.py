@@ -1,7 +1,7 @@
 import numpy as np
 import math
 
-def conjGrad(Ax, x,b,tol=1.0e-9):
+def conj_Grad(Ax, x,b,tol=1.0e-9):
     n = len(b)
     r = b - Ax(x)
     s = r.copy()
@@ -33,6 +33,6 @@ n = 20
 b = np.zeros(n)
 b[n-1] = 1.0
 x = np.zeros(n)
-x,numIter = conjGrad(Av,x,b)
-print(x)
+#x,numIter = conj_Grad(Av,x,b)
+#print(x)
 
