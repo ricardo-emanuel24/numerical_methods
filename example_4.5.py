@@ -5,4 +5,4 @@ def f(x):
     b = (x - 0.8)**2 + 0.04
     return 1.0/a - 1.0/b
 
-print("root =",ridder(f,0.0,1.0, tol=1.0e-9))
+print("root =",ridder(f,0.0,1.0,tol=1.0e-9))
