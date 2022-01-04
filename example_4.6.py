@@ -6,4 +6,4 @@ def f(x):
 def df(x):
     return 2*x
 
-print(newtonRaphson(f,df,1.4,2.0))
+print(newtonRaphson(f,df,1.0,2.0))
