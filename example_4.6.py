@@ -1,4 +1,4 @@
-from numerical_methods.newton_raphson_System import newtonRaphson
+from newton_raphson import newtonRaphson
 
 def f(x):
     return x**2 - 2

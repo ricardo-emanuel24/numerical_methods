@@ -30,6 +30,7 @@ def swap(v,k,p):
     v[[k,p]]=v[[p,k]]
     return v
 
+
 A=np.array([[2,-2,6],[-2,4,3],[-1,8,4]]).astype(float)
 b=np.array([16,0,-1]).astype(float)
 
