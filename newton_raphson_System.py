@@ -14,7 +14,7 @@ def jacobian(f,x):
         f1 = f(x)
         x[i] = x[i] - h
         J[:,i] = (f1 - f0)/h
-
+        print((f1 - f0)/h)
     return J,f0
     
 
