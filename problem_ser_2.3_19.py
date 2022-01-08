@@ -1,5 +1,4 @@
 import numpy as np
-from numpy.core.arrayprint import FloatFormat
 import conjGrad
 
 def Av(T):
