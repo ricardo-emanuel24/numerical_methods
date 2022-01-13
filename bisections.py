@@ -1,5 +1,5 @@
 import math
-from numpy import sign 
+from numpy import sign
 
 def bisection(f,x1,x2,tol,switch):
 
