@@ -27,7 +27,6 @@ def bisection(f,x1,x2,tol,switch):
 
 def f(x): return x**3 - 10.0*x**2 + 5.0
 
-
 x1, x2 = 0.0, 1.0
 tol=1.0e-4
 switch=1
