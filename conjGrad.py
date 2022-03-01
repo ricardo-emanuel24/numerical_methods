@@ -33,6 +33,7 @@ n = 20
 b = np.zeros(n)
 b[n-1] = 1.0
 x = np.zeros(n)
+
 #x,numIter = conj_Grad(Av,x,b)
 #print(x)
 
