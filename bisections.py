@@ -11,8 +11,10 @@ def bisection(f,x1,x2,tol,switch):
     for i in range(n):
         x3 = (x2+x1)/2
         f3 = f(x3)
+        
         if (switch == 1) and (abs(f3) > abs(f1)) and (abs(f3) > abs(f2)):
             return None
+
         if sign(f1) != sign(f3):
             x2 = x3
             f2 = f3
@@ -20,6 +22,7 @@ def bisection(f,x1,x2,tol,switch):
         elif sign(f2) != sign(f3):
             x1 = x3
             f1 = f3
+        
         else:
             return None
 
